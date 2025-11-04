@@ -33,6 +33,12 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# 自定义规则：忽略所有 DLL 但保留 lib/x86/ 下的
+*.dll
+!lib/x86/*.dll
+!lib/
+!lib/x86/
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
@@ -361,7 +367,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-
-# 允许lib目录下的DLL文件
-!lib/x86/*.dll
-!lib/x86/
