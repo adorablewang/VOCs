@@ -363,4 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # 允许lib目录下的DLL文件
-!lib/x86
+!lib/x86/*.dll
+!lib/x86/
