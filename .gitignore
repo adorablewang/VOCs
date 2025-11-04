@@ -33,11 +33,17 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-# 自定义规则：忽略所有 DLL 但保留 lib/x86/ 下的
+# 忽略所有 DLL 文件
 *.dll
+
+# 但保留 lib/x86/ 和 lib/x64/ 目录下的 DLL
 !lib/x86/*.dll
+!lib/x64/*.dll
+
+# 确保目录结构被跟踪
 !lib/
 !lib/x86/
+!lib/x64/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
