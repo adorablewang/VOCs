@@ -1673,9 +1673,13 @@ Public Class FormMain
 
         strbuf.Append(Now.ToString("yyyyMMddHHmmssfff") & ";")
         strbuf.Append("a00000-Rtd=" & Math.Round(saveparameter.flowconc_b, 1) & ";") '废气 污染物实时采样数据
-        strbuf.Append("a19001-Rtd=" & Math.Round(saveparameter.o2conc, 1) & ",") '氧气 污染物实时采样数据 标杆值
+        'strbuf.Append("a19001-Rtd=" & Math.Round(saveparameter.o2conc, 1) & ",") '氧气 污染物实时采样数据 标杆值
+        '2025.11.05 修改上传精度为2位小数
+        strbuf.Append($"a19001-Rtd={Math.Round(saveparameter.o2conc, 2):F2},")
         '2024.10.17化一环境新K37
-        strbuf.Append("a19001w-Rtd=" & Math.Round(saveparameter.o2conc_h, 1) & ";") '氧气 湿基值
+        'strbuf.Append("a19001w-Rtd=" & Math.Round(saveparameter.o2conc_h, 1) & ";") '氧气 湿基值
+        strbuf.Append($"a19001w-Rtd={Math.Round(saveparameter.o2conc_h, 2):F2};")
+
         strbuf.Append("a24088-Rtd=" & Math.Round(saveparameter.nmhcconc, 3) & ",")
         strbuf.Append("a24088-ZsRtd=" & Math.Round(saveparameter.nmhcconc_z, 3) & ";")
         '碳氢化合物
